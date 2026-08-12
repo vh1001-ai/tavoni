@@ -9,48 +9,68 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
         @font-face { font-family: 'Peyda'; src: url('https://vh1001-ai.github.io/alpha-codes-template/wp-content/uploads/2024/07/PeydaWebFaNum-Regular.woff') format('woff'); }
-        body { font-family: 'Peyda', sans-serif; background: #0f172a; color: white; margin: 0; overflow-x: hidden; }
+        body { font-family: 'Peyda', sans-serif; background: #0f172a; color: white; margin: 0; }
         .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
         #canvas-container { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; }
-        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
 <body>
     <div id="canvas-container"></div>
-    <nav class="fixed top-0 w-full z-50 glass p-4 flex justify-between items-center px-8">
-        <div class="text-xl font-bold gradient-text">تعاونی دهیاری‌های کهریزک</div>
-        <div class="hidden md:flex gap-6">
-            <a href="#" class="hover:text-sky-400">صفحه نخست</a>
-            <a href="#projects" class="hover:text-sky-400">پروژه‌ها</a>
-            <a href="#news" class="hover:text-sky-400">اخبار</a>
+    <nav class="fixed top-0 w-full z-50 glass p-4 px-8 flex justify-between items-center">
+        <div class="text-xl font-bold text-sky-400">تعاونی دهیاری‌های کهریزک</div>
+        <div class="flex gap-6 font-bold">
+            <a href="#home">خانه</a>
+            <a href="#projects">پروژه‌ها</a>
+            <a href="#blog">وبلاگ</a>
         </div>
-        <button onclick="document.getElementById('admin').classList.toggle('hidden')" class="bg-sky-600 px-4 py-2 rounded-lg text-sm">مدیریت</button>
     </nav>
 
-    <main class="relative pt-32 px-6 max-w-6xl mx-auto">
-        <section class="h-[70vh] flex flex-col justify-center">
-            <h1 class="text-5xl md:text-7xl font-black mb-6">آینده‌ای مدرن برای <span class="gradient-text">کهریزک</span></h1>
-            <p class="text-xl text-gray-400 max-w-2xl">شرکت تعاونی دهیاری‌ها؛ پیشرو در خدمات عمرانی و مهندسی راه و ساختمان.</p>
+    <main class="pt-32 px-6 max-w-6xl mx-auto">
+        <section id="home" class="h-[60vh] flex flex-col justify-center">
+            <h1 class="text-6xl font-black mb-4">آبادانی کهریزک</h1>
+            <p class="text-xl text-gray-400">نمایشگاه مدرن پروژه‌های عمرانی و اخبار تعاونی</p>
         </section>
 
+        <!-- Projects -->
         <section id="projects" class="py-20">
             <h2 class="text-3xl font-bold mb-10">پروژه‌های عمرانی</h2>
-            <div id="p-list" class="grid md:grid-cols-3 gap-8">
-                <div class="glass p-4 rounded-2xl"><div class="h-40 bg-sky-900/30 rounded-xl mb-4"></div><h3 class="font-bold">پل زیرگذر</h3><p class="text-sm text-gray-400">در حال احداث</p></div>
-                <div class="glass p-4 rounded-2xl"><div class="h-40 bg-sky-900/30 rounded-xl mb-4"></div><h3 class="font-bold">تعریض جاده</h3><p class="text-sm text-gray-400">تکمیل شده</p></div>
-                <div class="glass p-4 rounded-2xl"><div class="h-40 bg-sky-900/30 rounded-xl mb-4"></div><h3 class="font-bold">بوستان محلی</h3><p class="text-sm text-gray-400">در حال طراحی</p></div>
+            <div class="grid md:grid-cols-2 gap-8" id="p-list">
+                <div class="glass p-6 rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-bold">پل زیرگذر کهریزک</h3>
+                    <p class="text-sm text-gray-400 mb-4">اجرای عملیات بتن‌ریزی و اسکلت فلزی پل تقاطع.</p>
+                    <table class="w-full text-xs text-gray-300">
+                        <tr class="border-t border-white/10"><td>مکان:</td><td>کهریزک مرکزی</td></tr>
+                        <tr class="border-t border-white/10"><td>وضعیت:</td><td>تکمیل شده</td></tr>
+                    </table>
+                </div>
+                <div class="glass p-6 rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1533106497176-45ae19e68ba2" class="w-full h-48 object-cover rounded-xl mb-4">
+                    <h3 class="text-xl font-bold">آسفالت جاده سلامت</h3>
+                    <p class="text-sm text-gray-400 mb-4">بهسازی و روکش آسفالت مسیر دسترسی درسن‌آباد.</p>
+                    <table class="w-full text-xs text-gray-300">
+                        <tr class="border-t border-white/10"><td>متراژ:</td><td>۳۵۰۰ متر مربع</td></tr>
+                        <tr class="border-t border-white/10"><td>وضعیت:</td><td>در حال اجرا</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog -->
+        <section id="blog" class="py-20">
+            <h2 class="text-3xl font-bold mb-10">وبلاگ و اخبار</h2>
+            <div class="space-y-6">
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-2">تجهیز دهیاری‌ها به ماشین‌آلات جدید</h3>
+                    <p class="text-gray-400">با پیگیری تعاونی، ۳ دستگاه لودر جدید به ناوگان خدماتی بخش کهریزک اضافه شد.</p>
+                </div>
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-2">طرح بهسازی روستای درسن‌آباد</h3>
+                    <p class="text-gray-400">نشست مشترک دهیاران برای بررسی طرح‌های هادی روستایی.</p>
+                </div>
             </div>
         </section>
     </main>
-
-    <div id="admin" class="hidden fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4">
-        <div class="glass p-8 rounded-3xl w-full max-w-md">
-            <h3 class="text-xl font-bold mb-6">افزودن محتوا</h3>
-            <input id="title" type="text" placeholder="عنوان" class="w-full bg-white/5 border border-white/10 p-3 rounded-lg mb-4">
-            <button onclick="add()" class="w-full bg-sky-600 py-3 rounded-lg font-bold">ثبت</button>
-            <button onclick="document.getElementById('admin').classList.add('hidden')" class="w-full mt-2 text-gray-400">بستن</button>
-        </div>
-    </div>
 
     <script>
         const scene = new THREE.Scene();
@@ -59,27 +79,19 @@
         renderer.setSize(window.innerWidth, window.innerHeight);
         document.getElementById('canvas-container').appendChild(renderer.domElement);
         
-        const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
-        const material = new THREE.MeshPhongMaterial({ color: 0x38bdf8, wireframe: true });
-        const obj = new THREE.Mesh(geometry, material);
-        scene.add(obj);
-        scene.add(new THREE.PointLight(0xffffff, 1, 100));
-        camera.position.z = 30;
+        const geo = new THREE.BoxGeometry(5, 5, 5);
+        const mat = new THREE.MeshPhongMaterial({ color: 0x38bdf8, wireframe: true });
+        const cube = new THREE.Mesh(geo, mat);
+        scene.add(cube);
+        scene.add(new THREE.AmbientLight(0xffffff, 0.8));
+        camera.position.z = 20;
 
         function animate() {
             requestAnimationFrame(animate);
-            obj.rotation.y += 0.01;
+            cube.rotation.y += 0.01;
             renderer.render(scene, camera);
         }
         animate();
-
-        function add() {
-            const t = document.getElementById('title').value;
-            if(!t) return;
-            const item = `<div class="glass p-4 rounded-2xl"><div class="h-40 bg-sky-900/30 rounded-xl mb-4"></div><h3 class="font-bold">${t}</h3><p class="text-sm text-gray-400">پروژه جدید</p></div>`;
-            document.getElementById('p-list').innerHTML += item;
-            document.getElementById('admin').classList.add('hidden');
-        }
     </script>
 </body>
 </html>
